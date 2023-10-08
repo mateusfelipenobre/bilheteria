@@ -1,10 +1,11 @@
-# :checkered_flag: NOME DO PROJETO
+# :checkered_flag: Web Bilheteria  
 
-Breve descrição do que o seu projeto faz.
+Bilheteria virtual para compra de ingressos na internet.
 
 ## :technologist: Membros da equipe
 
-Matrícula, nome e curso dos participantes.
+Mateus Felipe Nobre - Design Digital - 428968
+Ruan Gabriel - Design Digital - 495292
 
 ## :people_holding_hands: Papéis ou tipos de usuário da aplicação
 
