@@ -1,0 +1,57 @@
+{
+  "ingresso": {
+    "cidades": [
+      {
+        "id": 1,
+        "tipo": "Coimbra"
+      },
+      {
+        "id": 2,
+        "tipo": "Porto"
+      },
+      {
+        "id": 3,
+        "tipo": "Lisboa"
+      },
+      {
+        "id": 4,
+        "tipo": "Madrid"
+      }
+    ],
+    "setores": [
+      {
+        "id": 1,
+        "tipo": "Front"
+      },
+      {
+        "id": 2,
+        "tipo": "Pista"
+      },
+      {
+        "id": 3,
+        "tipo": "Camarote"
+      },
+      {
+        "id": 4,
+        "tipo": "Visão Parcial"
+      }
+    ],
+    "categorias": [
+      {
+        "id": 1,
+        "tipo": "Inteira"
+      },
+      {
+        "id": 2,
+        "tipo": "Meia"
+      },
+      {
+        "id": 3,
+        "tipo": "Social"
+      }
+    ]
+  },
+   
+  "ticket": []
+  
+}
