@@ -1,6 +1,7 @@
 <template>
     <div>
         <form id ="dados-form">
+            <h3>Coloque seu nome e email</h3>
             <div class="input-container">
                 <label for="user">Email</label>
                 <input type="text" id="nome" name="nome" v-model ="nome" placeholder="Digite o seu nome">
@@ -12,8 +13,16 @@
             <div class="input-container">
                 <input type="submit" class="submit-btn" value= "Login">
             </div> 
+            <div class="input-container">
+            <router-link to="/TelaUsuario">user</router-link> <br>
+            <router-link to="/TelaAdm">adm</router-link>
+        </div>
         </form>
+        
+        
     </div>
+
+
 </template>
 
 <script>

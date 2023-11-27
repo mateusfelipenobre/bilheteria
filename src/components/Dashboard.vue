@@ -29,6 +29,8 @@
 
 export default {
    name: "Dashboard",
+
+   
    data (){
         return {
             ticket: null,

@@ -3,7 +3,7 @@
     <router-link to="/" id="logo-url">
         <img :src="logo" :alt="alt" id="logo">
     </router-link>
-    <router-link to="/pedidos">Login</router-link>
+    <router-link to="/Login">Login</router-link>
   </div>
 </template>
 
@@ -13,7 +13,6 @@
         props: ["logo", "alt"]
     }
 </script>
-
 <style scoped>
     #nav {
         background-color: black;

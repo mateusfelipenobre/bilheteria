@@ -8,10 +8,22 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/pedidos',
+    path: '/login',
     name: 'Login',
     
     component: () => import(/* webpackChunkName: "Login" */ '../views/Login.vue')
+  },
+  {
+    path: '/TelaUsuario',
+    name: 'TelaUsuario',
+    
+    component: () => import(/* webpackChunkName: "Login" */ '../views/TelaUsuario.vue')
+  },
+  {
+    path: '/TelaAdm',
+    name: 'TelaAdm',
+    
+    component: () => import(/* webpackChunkName: "Login" */ '../views/TelaAdm.vue')
   }
 ]
 

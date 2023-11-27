@@ -1,6 +1,6 @@
 <template>
     <footer id="footer">
-        <p>Mateus & Ruan desenvolvimento web e design &copy; 2023</p>
+        <p>Mateus & Ruan & Diogo desenvolvimento web e design &copy; 2023</p>
     </footer>
 </template>
 
