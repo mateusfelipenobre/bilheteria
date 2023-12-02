@@ -51,20 +51,5 @@
       }
     ]
   },
-  "ticket": [
-    {
-      "cidade": "Porto",
-      "setor": "Front",
-      "categoria": "Meia",
-      "status": "solicitado",
-      "id": 1
-    },
-    {
-      "cidade": null,
-      "setor": null,
-      "categoria": null,
-      "status": "solicitado",
-      "id": 2
-    }
-  ]
+  "ticket": []
 }

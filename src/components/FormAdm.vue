@@ -1,7 +1,7 @@
 <template>
     <div>
         <form id="adm-form" @submit="inserirDados">
-            <h3>Adicione cidades, shows e categorias </h3>
+            <h2>Adicione cidades, shows e categorias </h2>
             <div class="input-container">
               <label for="cidade">Cidades que o show está disponível:</label>
               <input type="text" id="cidade" name="cidade" v-model="cidade" placeholder="Digite a cidade que vão ocorrer os shows">
@@ -66,20 +66,5 @@ methods: {
     max-width: 400px;
     margin: 0 auto;
   }
-  .input-container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  label {
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #222;;
-    padding: 5px 10px;
-    border-left: 4px solid #222;
-  }
-  input {
-    padding: 5px 10px;
-    width: 300px;
-    }
+ 
 </style>

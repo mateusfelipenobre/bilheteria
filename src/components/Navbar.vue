@@ -3,7 +3,9 @@
     <router-link to="/" id="logo-url">
         <img :src="logo" :alt="alt" id="logo">
     </router-link>
+    <router-link to="/Ingressos">Seus Ingressos</router-link>
     <router-link to="/Login">Login</router-link>
+    
   </div>
 </template>
 

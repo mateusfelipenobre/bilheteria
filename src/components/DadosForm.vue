@@ -1,8 +1,10 @@
 <template>
         <div>
+    
             <Mensagem :msg="msg" v-show="msg" />
             <form id="dados-form" @submit="createTicket">
             <div class="input-container">
+               <h2> Compre aqui seu ingresso</h2>
                 <label for="cidade">Para qual cidade da turnê você deseja escolher?</label>
                 <select name="cidade" id="cidade" v-model="cidade">
                     <option value="">Selecione a cidade</option>
@@ -133,20 +135,6 @@ export default {
         width: 50%;
         margin-bottom: 20px
     }
-    .submit-btn {
-        background-color: #222;
-        color: white;
-        font-weight: bold;
-        border: 2px solid #222;
-        padding: 10px;
-        font-size: 16px;
-        margin: 0 auto;
-        cursor: pointer;
-        transition: .5s;
-    }
-    .submit-btn:hover {
-        background-color: transparent;
-        color: #222;
-    }
+   
 
 </style>

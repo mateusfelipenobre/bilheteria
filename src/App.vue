@@ -31,8 +31,8 @@ export default {
     box-sizing: border-box;
   }
   .main-container {
-    margin: 50px;
-    min-height: 250px;
+    margin: 30px;
+    min-height: 550px;
   }
 
   h1 {
@@ -42,9 +42,71 @@ export default {
     color: #222;
   }
 
+  h2 {
+    padding: 20px;
+    text-align: center;
+  }
+
   @font-face {
     font-family: "Sequel 100 Wide 95";
     src: url('../public/Sequel\ 100\ Wide\ 95.ttf');
     
   }
+
+  .submit-btn {
+        background-color: #222;
+        color: #fff;
+        font-weight: bold;
+        border: 2px solid #222;
+        padding: 10px;
+        font-size: 16px;
+        margin: 0 auto;
+        cursor: pointer;
+        transition: .5s;
+    }
+    .submit-btn:hover {
+        background-color: transparent;
+        color: #222;
+    }
+
+
+     .input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  label {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #222;;
+    padding: 5px 10px;
+    border-left: 4px solid #222;
+  }
+  input {
+    padding: 5px 10px;
+    width: 300px;
+    }
+
+      .input-container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    input, select {
+        padding: 5px 10px;
+        width: 300px;
+    }
+    #opcionais-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .checkbox-container {
+        display: flex;
+        align-items: flex-start;
+        width: 50%;
+        margin-bottom: 20px
+    }
+
+
 </style>

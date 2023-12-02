@@ -1,7 +1,7 @@
 <template>
     <div>
         <form id ="dados-form">
-            <h3>Coloque seu nome e email</h3>
+            <h2>Coloque seu nome e email</h2>
             <div class="input-container">
                 <label for="user">Email</label>
                 <input type="text" id="nome" name="nome" v-model ="nome" placeholder="Digite o seu nome">
@@ -57,19 +57,5 @@ export default {
         padding: 5px 10px;
         border-left: 4px solid black;
     }
-.submit-btn {
-        background-color: #222;
-        color: #fff;
-        font-weight: bold;
-        border: 2px solid #222;
-        padding: 10px;
-        font-size: 16px;
-        margin: 0 auto;
-        cursor: pointer;
-        transition: .5s;
-    }
-    .submit-btn:hover {
-        background-color: transparent;
-        color: #222;
-    }
+
 </style>

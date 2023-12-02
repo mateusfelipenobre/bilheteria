@@ -24,6 +24,12 @@ const routes = [
     name: 'TelaAdm',
     
     component: () => import(/* webpackChunkName: "Login" */ '../views/TelaAdm.vue')
+  },
+  {
+    path: '/Ingressos',
+    name: 'Ingressos',
+    
+    component: () => import(/* webpackChunkName: "Ingressos" */ '../views/Ingressos.vue')
   }
 ]
 
