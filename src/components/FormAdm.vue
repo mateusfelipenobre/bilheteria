@@ -63,8 +63,16 @@ methods: {
 
 <style scoped>
     #adm-form {
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
+  }
+
+  input{
+    width: 600px;
+  }
+
+  h2{
+    font-family: "Sequel 100 Wide 95";
   }
  
 </style>

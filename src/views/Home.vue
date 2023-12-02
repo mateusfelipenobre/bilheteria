@@ -25,3 +25,11 @@ export default {
   }
 }
 </script>
+
+<style>
+  .submit-btn{
+    margin-top: 25px;
+    align-items: center;
+  }
+
+</style>

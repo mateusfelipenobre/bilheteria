@@ -1,7 +1,7 @@
 <template>
     <div>
         <form id ="dados-form">
-            <h2>Coloque seu nome e email</h2>
+            <h2>Realize o login para fazer sua compra</h2>
             <div class="input-container">
                 <label for="user">Email</label>
                 <input type="text" id="nome" name="nome" v-model ="nome" placeholder="Digite o seu nome">
@@ -36,7 +36,7 @@ export default {
 <style scoped>
 
 #dados-form {
-        max-width: 400px;
+        max-width: 600px;
         margin: 0 auto;
     }
 
@@ -47,7 +47,7 @@ export default {
     }
     input {
         padding: 5px 10px;
-        width: 300px;
+        width: 600px;
     }
 
     label {
@@ -56,6 +56,9 @@ export default {
         color: #222;
         padding: 5px 10px;
         border-left: 4px solid black;
+    }
+    h2{
+        font-family: "Sequel 100 Wide 95";
     }
 
 </style>

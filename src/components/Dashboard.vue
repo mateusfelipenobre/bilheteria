@@ -137,7 +137,9 @@ export default {
         background-color: transparent;
         color: #222;
     }
-    
+    h2{
+        font-family: "Sequel 100 Wide 95";
+    }
 
 
 </style>

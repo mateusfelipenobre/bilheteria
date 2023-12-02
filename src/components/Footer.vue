@@ -1,6 +1,6 @@
 <template>
     <footer id="footer">
-        <p>Mateus & Ruan & Diogo desenvolvimento web e design &copy; 2023</p>
+        <p>Mateus & Ruan & Diogo. Desenvolvimento web e Design &copy; 2023</p>
     </footer>
 </template>
 
@@ -13,7 +13,7 @@ export default {
 <style scoped>
     #footer {
         position: fixed;
-        height: 100px;
+        height: 40px;
         background-image: url("../../public/img/footer.png");
         color: #ffffff;
         display: flex;
