@@ -12,13 +12,15 @@ export default {
 
 <style scoped>
     #footer {
+        position: fixed;
         height: 100px;
-        background-image: url('/public/img/footer.png');
+        background-image: url("../../public/img/footer.png");
         color: #ffffff;
         display: flex;
         align-items: center;
         justify-content: center;
         bottom: 0;
         width: 100%;
+        
     }
 </style>
