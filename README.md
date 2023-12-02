@@ -3,6 +3,7 @@
 ## Project setup
 ```
 npm install
+npm install @splidejs/vue-splide
 ```
 
 ### Compiles and hot-reloads for development
