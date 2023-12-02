@@ -35,6 +35,7 @@
         text-decoration: none;
         margin: 12px;
         transition: .5s;
+        font-family: "Sequel 100 Wide 95";
     }
     #nav a:hover {
         color: #940d0d;

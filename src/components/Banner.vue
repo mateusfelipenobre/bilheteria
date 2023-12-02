@@ -17,7 +17,7 @@ export default {
         background-image: url('/public/img/cover.jpg');
         background-position: 10;
         background-size: cover;
-        height: 590px;
+        height: 620px;
         display: flex;
         align-items: center;
         justify-content: flex-start;

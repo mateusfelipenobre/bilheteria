@@ -12,8 +12,8 @@ export default {
 
 <style scoped>
     #footer {
-        height: 200px;
-        background-color: black;
+        height: 100px;
+        background-image: url('/public/img/footer.png');
         color: #ffffff;
         display: flex;
         align-items: center;

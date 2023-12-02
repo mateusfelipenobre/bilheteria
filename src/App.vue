@@ -41,4 +41,10 @@ export default {
     margin-bottom: 30px;
     color: #222;
   }
+
+  @font-face {
+    font-family: "Sequel 100 Wide 95";
+    src: url('../public/Sequel\ 100\ Wide\ 95.ttf');
+    
+  }
 </style>
