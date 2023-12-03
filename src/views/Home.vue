@@ -4,7 +4,7 @@
   <div class="main-container">
        <Conteudo />
       <Playlist />
-      <input  class="submit-btn" type="submit" value= "Comprar ingresso">
+      
   </div>
 </template>
 
