@@ -31,8 +31,8 @@ export default {
     box-sizing: border-box;
   }
   .main-container {
-    margin: 30px;
-    min-height: 550px;
+    margin: 120px;
+    min-height: 750px;
   }
 
   h1 {
