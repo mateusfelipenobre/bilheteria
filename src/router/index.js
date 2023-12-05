@@ -1,7 +1,12 @@
+import Vue from 'vue';
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/Home.vue'
+import HomeView from '../views/Home.vue';
+import LoginForm from '../components/LoginForm';
+import Login from '../views/Login';
+import TelaUsuario from '../views/TelaUsuario';
 
 const routes = [
+  
   {
     path: '/',
     name: 'home',
@@ -24,12 +29,6 @@ const routes = [
     name: 'TelaAdm',
     
     component: () => import(/* webpackChunkName: "Login" */ '../views/TelaAdm.vue')
-  },
-  {
-    path: '/Ingressos',
-    name: 'Ingressos',
-    
-    component: () => import(/* webpackChunkName: "Ingressos" */ '../views/Ingressos.vue')
   }
 ]
 

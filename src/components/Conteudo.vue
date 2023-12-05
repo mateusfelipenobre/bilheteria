@@ -8,10 +8,3 @@ export default {
 }
 </script>
 
-<style>
-
-    h3{
-        font-family: "Sequel 100 Wide 95";
-        text-align: center;
-    }
-</style>

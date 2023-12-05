@@ -1,4 +1,18 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "username": "usuario1",
+      "password": "senha1",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "username": "admin",
+      "password": "adminsenha",
+      "role": "admin"
+    }
+  ],
   "ingresso": {
     "cidades": [
       {
@@ -53,9 +67,9 @@
   },
   "ticket": [
     {
-      "cidade": "Lisboa",
-      "setor": "Front",
-      "categoria": "Inteira",
+      "cidade": "Coimbra",
+      "setor": "Pista",
+      "categoria": "Meia",
       "status": "solicitado",
       "id": 1
     }

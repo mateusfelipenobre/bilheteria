@@ -30,6 +30,12 @@ export default {
     margin: 0;
     box-sizing: border-box;
   }
+  
+  @font-face {
+    font-family: "Sequel 100 Wide 95";
+    src: url('../public/Sequel\ 100\ Wide\ 95.ttf');
+    
+  }
   .main-container {
     margin: 60px 120px;
     min-height: 500px;
@@ -42,16 +48,16 @@ export default {
     color: #222;
   }
 
-  h2 {
-    padding: 20px;
-    text-align: center;
-  }
+    h2 {
+      padding: 20px;
+      text-align: center;
+      font-family: "Sequel 100 Wide 95";
+    }
+   h3{
+        font-family: "Sequel 100 Wide 95";
+        text-align: center;
+    }
 
-  @font-face {
-    font-family: "Sequel 100 Wide 95";
-    src: url('../public/Sequel\ 100\ Wide\ 95.ttf');
-    
-  }
 
   .submit-btn {
         background-color: #222;
@@ -69,31 +75,31 @@ export default {
         color: #222;
     }
 
-
-     .input-container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  label {
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #222;;
-    padding: 5px 10px;
-    border-left: 4px solid #222;
-  }
-  input {
-    padding: 5px 10px;
-    width: 300px;
+  #dados-form {
+        max-width: 400px;
+        margin: 50px auto;
     }
 
-      .input-container {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 20px;
+
+  .input-container {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+    }
+    input {
+        padding: 5px 10px;
+        width: 600px;
     }
 
-    input, select {
+    label {
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #222;
+        padding: 5px 10px;
+        border-left: 4px solid black;
+    }
+
+   select {
         padding: 5px 10px;
         width: 300px;
     }

@@ -69,7 +69,7 @@ export default {
                 categoria: this.categoria,
                 status: "solicitado"
             }
-
+            
             const dataJson = JSON.stringify(data);
 
             const req = await fetch("http://localhost:3000/ticket", {
@@ -79,15 +79,17 @@ export default {
       });
 
            const res = await req.json();
-
+    
+          
            this.msg = 'Pedido realizado com sucesso';
            
            this.cidade = "";
            this.setor = "";
            this.categoria = "";
-
+           //this.incrementarAtualizacao(); 
         }
-    
+        
+        
        
     },
     mounted() {
@@ -99,55 +101,3 @@ export default {
 }
 </script>
 
-<style scoped>
-    #dados-form {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-
-    .input-container {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 20px;
-    }
-
-    label {
-        font-weight: bold;
-        margin-bottom: 15px;
-        color: #222;
-        padding: 5px 10px;
-        border-left: 4px solid black;
-    }
-
-    input, select {
-        padding: 5px 10px;
-        width: 600px;
-    }
-    #opcionais-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    .checkbox-container {
-        display: flex;
-        align-items: flex-start;
-        width: 50%;
-        margin-bottom: 20px
-    }
-    .submit-btn {
-        background-color: #222;
-        color: white;
-        font-weight: bold;
-        border: 2px solid #222;
-        padding: 10px;
-        font-size: 16px;
-        margin: 0 auto;
-        cursor: pointer;
-        transition: .5s;
-    }
-    .submit-btn:hover {
-        background-color: transparent;
-        color: #222;
-    }
-
-
-</style>

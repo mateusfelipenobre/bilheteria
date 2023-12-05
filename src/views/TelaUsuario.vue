@@ -3,6 +3,7 @@
   <div class="main-container">
     <Carrossel/>
     <DadosForm/>
+     <Dashboard />
     
   </div>
  
@@ -13,6 +14,7 @@ import LoginForm from "../components/LoginForm.vue"
 import DadosForm from "../components/DadosForm.vue"
 import Mensagem from "../components/Mensagem.vue"
 import Carrossel from "../components/Carrossel.vue"
+import Dashboard from "../components/Dashboard.vue"
 
 
 export default {
@@ -22,7 +24,8 @@ export default {
    LoginForm,
    DadosForm,
    Mensagem,
-   Carrossel
+   Carrossel, 
+   Dashboard
   }
 }
 </script>
