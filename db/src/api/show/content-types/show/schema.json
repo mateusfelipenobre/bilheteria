@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shows",
+  "info": {
+    "singularName": "show",
+    "pluralName": "shows",
+    "displayName": "Shows"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Cidade": {
+      "type": "string"
+    },
+    "Setor": {
+      "type": "string"
+    },
+    "Categoria": {
+      "type": "string"
+    }
+  }
+}

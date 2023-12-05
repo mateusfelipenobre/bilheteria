@@ -51,7 +51,7 @@ export default {
     },
     methods: {
         async getIngresso() {
-             const req = await fetch('http://localhost:3000/ingresso');
+             const req = await fetch('http://localhost:1337/api/ingressos');
              const data = await req.json();
 
              this.cidades = data.cidades;
