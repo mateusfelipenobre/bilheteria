@@ -1,18 +1,19 @@
 # :checkered_flag: SITE DE INGRESSOS ATEEZ
 
-Breve descrição do que o seu projeto faz.
+O sistema é utilizado para a venda dos ingressos da turnê na América Latina do grupo de K-POP Ateez.
 
 ## :technologist: Membros da equipe
 
 Mateus Felipe Nobre Rego, Design Digital, 428968.
+
 Ruan Gabriel Lopes e Souza, Design Digital, 49292.
+
 Francisco Diogo Sampaio Gaspar, Design Digital, 474255.
 
 ## :people_holding_hands: Papéis ou tipos de usuário da aplicação
 
-Administrador: Pode adiconar as inforamações sobre novos shows, disponibilizando a venda dos ingressos;
-Comprador: Pode comprar os ingressos, além de ver seus histórico de compras e excluir seus ingressos comprados;
-Usuário: Pode visualizar a página de home as datas de show, mas não pode comprar os ingressos por não estar logado.
+Administradores;
+Compradores;
 
 ## :spiral_calendar: Entidades ou tabelas do sistema
 
@@ -20,8 +21,7 @@ User, Admin e comprador.
 
 ## :triangular_flag_on_post:	 Principais funcionalidades da aplicação
 
-Descreve ou liste brevemente as principais funcionalidades da aplicação que será desenvolvida. Destaque a funcionalidades que serão acessévies a todos os usuários e aquelas restriras a usuários logados.
-
+Todos os acessantes do site podem visualizar a página de home, além das datas, setores e tipos e ingressos disponíveis. Mas apenas usuários logados podem realizar a compra dos ingressos, além de ver seus histórico de compras e excluir seus ingressos comprados. Já os administradores podem adiconar as inforamações sobre novos shows, disponibilizando a venda dos ingressos
 
 ## :desktop_computer: Tecnologias e frameworks utilizados
 
