@@ -58,6 +58,9 @@ export default {
         text-align: center;
     }
 
+    #comprar{
+    width: 400px;
+    }
 
   .submit-btn {
         background-color: #222;
@@ -69,7 +72,10 @@ export default {
         margin: 0 auto;
         cursor: pointer;
         transition: .5s;
+        justify-content: center;
     }
+
+
     .submit-btn:hover {
         background-color: transparent;
         color: #222;

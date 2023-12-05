@@ -17,19 +17,19 @@
     "cidades": [
       {
         "id": 1,
-        "tipo": "Coimbra"
+        "tipo": "São Paulo"
       },
       {
         "id": 2,
-        "tipo": "Porto"
+        "tipo": "México"
       },
       {
         "id": 3,
-        "tipo": "Lisboa"
+        "tipo": "Santiago"
       },
       {
         "id": 4,
-        "tipo": "Madrid"
+        "tipo": "Bogóda"
       }
     ],
     "setores": [
@@ -67,10 +67,9 @@
   },
   "ticket": [
     {
-      "cidade": "Coimbra",
-      "setor": "Pista",
+      "cidade": "Santiago",
+      "setor": "Visão Parcial",
       "categoria": "Meia",
-      "status": "solicitado",
       "id": 1
     }
   ]

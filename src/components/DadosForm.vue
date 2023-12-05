@@ -25,7 +25,7 @@
             </div> 
            
             <div class="input-container">
-                <input  class="submit-btn" type="submit" value= "Comprar ingresso">
+                <input id="comprar" class="submit-btn" type="submit" value= "Comprar ingresso">
             </div> 
          </form>
         </div>
@@ -86,7 +86,7 @@ export default {
            this.cidade = "";
            this.setor = "";
            this.categoria = "";
-           //this.incrementarAtualizacao(); 
+         this.incrementarAtualizacao(); 
         }
         
         
