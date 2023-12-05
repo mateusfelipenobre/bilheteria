@@ -65,12 +65,5 @@
       }
     ]
   },
-  "ticket": [
-    {
-      "cidade": "Santiago",
-      "setor": "Visão Parcial",
-      "categoria": "Meia",
-      "id": 1
-    }
-  ]
+  "ticket": []
 }

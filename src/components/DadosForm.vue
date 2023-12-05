@@ -86,7 +86,7 @@ export default {
            this.cidade = "";
            this.setor = "";
            this.categoria = "";
-         this.incrementarAtualizacao(); 
+        
         }
         
         

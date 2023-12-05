@@ -4,7 +4,7 @@
   <div class="main-container">
        <Conteudo />
       <Playlist />
-      
+
   </div>
 </template>
 
