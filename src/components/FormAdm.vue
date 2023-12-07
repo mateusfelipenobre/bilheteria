@@ -1,95 +1,71 @@
 <template>
   <div>
-    <form id="adm-form" @submit.prevent="inserirDados">
-      <h2>Adicione cidades, shows e categorias</h2>
+    <form id="form-adm" @submit.prevent="cadastrarIngresso">
       <div class="input-container">
-        <label for="cidade">Cidades que o show está disponível:</label>
-        <input type="text" id="cidade" name="cidade" v-model="cidade" placeholder="Digite a cidade que vão ocorrer os shows">
+        <label for="cidade">Cidade:</label>
+        <input type="text" name="cidade" id="cidade" v-model="novaCidade" />
       </div>
       <div class="input-container">
-        <label for="setor">Que setores estarão disponíveis?</label>
-        <input type="text" id="setor" name="setor" v-model="setor" placeholder="Digite os setores que estão disponíveis">
+        <label for="setor">Setor:</label>
+        <input type="text" name="setor" id="setor" v-model="novoSetor" />
       </div>
       <div class="input-container">
-        <label for="categoria">Que categorias estarão disponíveis?</label>
-        <input type="text" id="categoria" name="categoria" v-model="categoria" placeholder="Digite que categorias estão disponíveis">
+        <label for="categoria">Categoria:</label>
+        <input type="text" name="categoria" id="categoria" v-model="novaCategoria" />
       </div>
-
       <div class="input-container">
-        <input class="submit-btn" type="submit" value="Inserir dados">
+        <label for="quantidadeDisponivel">Quantidade a ser cadastrada:</label>
+        <input type="number" name="quantidadeDisponivel" id="quantidadeDisponivel" v-model.number="novaQuantidade" />
+      </div>
+      <div class="input-container">
+        <input class="submit-btn" type="submit" value="Cadastrar Ingresso" />
       </div>
     </form>
   </div>
 </template>
 
 <script>
-import Mensagem from "../components/Mensagem.vue";
-
 export default {
-  name: "DadosForm",
   data() {
     return {
-      cidade: null,
-      setor: null,
-      categoria: null,
-      msg: null
+      novaCidade: "",
+      novoSetor: "",
+      novaCategoria: "",
+      novaQuantidade: 1, // valor padrão
     };
   },
   methods: {
-    async enviarDados(url, data) {
-      const response = await fetch(url, {
+    async cadastrarIngresso() {
+      const novoIngresso = {
+        cidade: this.novaCidade,
+        setor: this.novoSetor,
+        categoria: this.novaCategoria,
+        quantidadeDisponivel: this.novaQuantidade,
+      };
+
+      const dataJson = JSON.stringify(novoIngresso);
+
+      const req = await fetch("http://localhost:3000/ingresso", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
+        headers: { "Content-Type": "application/json" },
+        body: dataJson,
       });
 
-      if (!response.ok) {
-        throw new Error(`Erro na requisição: ${response.statusText}`);
-      }
+      const res = await req.json();
 
-      return response.json();
+      // Lógica adicional, se necessário
+      console.log("Ingresso cadastrado com sucesso!");
+
+      // Limpar os campos após o cadastro
+      this.novaCidade = "";
+      this.novoSetor = "";
+      this.novaCategoria = "";
+      this.novaQuantidade = 1; // redefinindo para o valor padrão
     },
-
-    async inserirDados() {
-      try {
-        const endpoints = [
-          "http://localhost:3000/ingresso/cidades",
-          "http://localhost:3000/ingresso/setores",
-          "http://localhost:3000/ingresso/categorias"
-        ];
-
-        // Itera sobre os endpoints e envia os dados
-        for (const endpoint of endpoints) {
-          await this.enviarDados(endpoint, { tipo: this[endpoint.split("/").pop()] });
-        }
-
-        console.log('Dados inseridos com sucesso');
-
-        // Limpar os campos do formulário após a inserção
-        this.cidade = "";
-        this.setor = "";
-        this.categoria = "";
-
-        // Atualizar a lista de cidades, setores e categorias
-        this.$parent.getIngresso();
-      } catch (error) {
-        console.error('Erro ao inserir dados:', error);
-      }
-    }
   },
-  components: {
-    Mensagem
-  }
 };
 </script>
 
-
 <style scoped>
-  #adm-form {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
+/* Estilos opcionais podem ser adicionados aqui */
 </style>

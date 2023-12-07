@@ -7,6 +7,7 @@
         <div>Cidade</div>
         <div>Setor</div>
         <div>Categoria</div>
+        <div>Status</div>
         <div>Ações</div>
       </div>
     </div>
@@ -16,6 +17,7 @@
         <div>{{ ticket.cidade }}</div>
         <div>{{ ticket.setor }}</div>
         <div>{{ ticket.categoria }}</div>
+        <div>{{ ticket.status }}</div>
         <div>
           <button class="imprimir-btn">
             <a
@@ -55,6 +57,7 @@
           </option>
         </select>
       </div>
+      
       <div class="input-container">
         <button class="submit-btn" type="submit">Salvar Edições</button>
       </div>
@@ -76,6 +79,7 @@ export default {
         cidade: null,
         setor: null,
         categoria: null,
+        status: null,
       },
       cidades: null,
       setores: null,
@@ -106,14 +110,15 @@ export default {
       this.editedTicket.cidade = ticket.cidade;
       this.editedTicket.setor = ticket.setor;
       this.editedTicket.categoria = ticket.categoria;
+      this.editedTicket.status = ticket.status;
     },
     async saveEdit() {
-      const { id, cidade, setor, categoria } = this.editedTicket;
+      const { id, cidade, setor, categoria, status } = this.editedTicket;
 
       const req = await fetch(`http://localhost:3000/ticket/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cidade, setor, categoria }),
+        body: JSON.stringify({ cidade, setor, categoria, status }),
       });
 
       const res = await req.json();
@@ -127,6 +132,7 @@ export default {
         cidade: null,
         setor: null,
         categoria: null,
+        status: null,
       };
 
       this.getIngressos();
@@ -147,87 +153,79 @@ export default {
 };
 </script>
 
-
-
-
 <style scoped>
-  
+#tabela {
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
-    #tabela {
-        max-width: 1100px;
-        margin: 0 auto;
-    }
-
-    #tabela-head,
-    #tabela-rows,
-    .tabela-row {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    #tabela-head {
-        font-weight: bold;
-        padding: 12px;
-        border-bottom: 3px solid #333;
-    }
-    #tabela-head div, 
-    .tabela-row div {
-        width: 19%;
-    }
-    .tabela-row {
-        width: 100%;
-        padding: 12px;
-        border-bottom: 1px solid #ccc;
-    }
-    #tabela-head .order-id,
-    .tabela-row .order-number {
-        width: 5%;
-    }
-   .imprimir-btn {
-        background-color: #222;
-        color: white;
-        font-weight: bold;
-        border: 2px solid #222;
-        padding: 5px;
-        font-size: 12px;
-        margin: 0 5px;
-        cursor: pointer;
-        transition: .5s
-   }
-   .imprimir-btn:hover {
-        background-color: transparent;
-        color: #222;
-    }
-    .delete-btn {
-        background-color: #831010;
-        color: white;
-        font-weight: bold;
-        border: 2px solid #831010;
-        padding: 5px;
-        font-size: 12px;
-        margin: 0 auto;
-        cursor: pointer;
-        transition: .5s
-    }
-    .delete-btn:hover {
-        background-color: transparent;
-        color: #222;
-    }
-
-    .edit-btn {
-        background-color: blue;
-        color: white;
-        font-weight: bold;
-        border: 2px solid  blue;
-        padding: 5px;
-        font-size: 12px;
-        margin: 0 5px;
-        cursor: pointer;
-        transition: .5s
-    }
-    .edit-btn:hover {
-        background-color: transparent;
-        color: #222;
-    }
-
-
+#tabela-head,
+#tabela-rows,
+.tabela-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+#tabela-head {
+  font-weight: bold;
+  padding: 12px;
+  border-bottom: 3px solid #333;
+}
+#tabela-head div,
+.tabela-row div {
+  width: 19%;
+}
+.tabela-row {
+  width: 100%;
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+}
+#tabela-head .order-id,
+.tabela-row .order-number {
+  width: 5%;
+}
+.imprimir-btn {
+  background-color: #222;
+  color: white;
+  font-weight: bold;
+  border: 2px solid #222;
+  padding: 5px;
+  font-size: 12px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.imprimir-btn:hover {
+  background-color: transparent;
+  color: #222;
+}
+.delete-btn {
+  background-color: #831010;
+  color: white;
+  font-weight: bold;
+  border: 2px solid #831010;
+  padding: 5px;
+  font-size: 12px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.delete-btn:hover {
+  background-color: transparent;
+  color: #222;
+}
+.edit-btn {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  border: 2px solid blue;
+  padding: 5px;
+  font-size: 12px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.edit-btn:hover {
+  background-color: transparent;
+  color: #222;
+}
 </style>

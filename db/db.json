@@ -65,5 +65,14 @@
       }
     ]
   },
-  "ticket": []
+  "ticket": [
+    {
+      "status": "aceito",
+      "id": 1
+    },
+    {
+      "status": "aceito",
+      "id": 2
+    }
+  ]
 }

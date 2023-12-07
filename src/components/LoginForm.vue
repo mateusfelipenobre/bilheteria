@@ -19,6 +19,8 @@
         </form>
         <p v-if="error" style="color: red;">{{ error }}</p>
         
+         <router-link to="TelaAdm">ADM</router-link> <br>
+          <router-link to="TelaUsuario">Usuário</router-link>
         
     </div>
 
