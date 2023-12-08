@@ -120,10 +120,13 @@ export default {
 }
 
 .acao-btn {
+  margin-left: 35%;
+  text-align: center;
   border: 2px solid transparent;
   padding: 10px 15px;
   cursor: pointer;
   transition: border-color 0.3s, color 0.3s, background-color 0.3s;
+  width: 30%;
 }
 
 .acao-btn:hover {

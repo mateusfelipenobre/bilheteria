@@ -31,6 +31,10 @@ export default {
     box-sizing: border-box;
   }
   
+  input{
+  width: 400px;
+}
+
   @font-face {
     font-family: "Sequel 100 Wide 95";
     src: url('../public/Sequel\ 100\ Wide\ 95.ttf');
@@ -73,6 +77,7 @@ export default {
         cursor: pointer;
         transition: .5s;
         justify-content: center;
+        width: 400px;
     }
 
 
@@ -85,7 +90,11 @@ export default {
         max-width: 400px;
         margin: 50px auto;
     }
-
+    #form-adm{
+      justify-content: center;
+      max-width: 400px;
+      margin: 30px auto;
+    }
 
   .input-container {
           display: flex;

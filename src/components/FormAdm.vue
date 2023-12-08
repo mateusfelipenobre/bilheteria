@@ -1,4 +1,5 @@
 <template>
+  <h2> Adicionar Ingressos para compra</h2>
   <div>
     <form id="form-adm" @submit.prevent="cadastrarIngresso">
       <div class="input-container">
@@ -67,5 +68,7 @@ export default {
 </script>
 
 <style scoped>
-/* Estilos opcionais podem ser adicionados aqui */
+input{
+  width: 400px;
+}
 </style>

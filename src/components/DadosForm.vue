@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <Mensagem :msg="msg" v-show="msg" />
     <form id="dados-form" @submit="createTicket">
@@ -39,6 +40,8 @@
       </div>
     </form>
   </div>
+
+  <h3>Seu carrinho de compras</h3>
 </template>
 
 <script>
@@ -110,3 +113,12 @@ export default {
   }
 };
 </script>
+
+<style>
+#quantidade{
+  width: 400px;
+}
+label{
+  min-width: 600px;
+}
+</style>
