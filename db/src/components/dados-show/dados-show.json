@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_dados_show_dados_shows",
+  "info": {
+    "displayName": "dadosShow",
+    "icon": "stack"
+  },
+  "options": {},
+  "attributes": {
+    "Cidade": {
+      "type": "string"
+    },
+    "Setor": {
+      "type": "string"
+    },
+    "Categoria": {
+      "type": "string"
+    }
+  }
+}

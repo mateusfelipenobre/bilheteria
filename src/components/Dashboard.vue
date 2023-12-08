@@ -8,6 +8,7 @@
         <div>Setor</div>
         <div>Categoria</div>
         <div>Status</div>
+        <div>Quantidade</div>
         <div>Ações</div>
       </div>
     </div>
@@ -18,15 +19,8 @@
         <div>{{ ticket.setor }}</div>
         <div>{{ ticket.categoria }}</div>
         <div>{{ ticket.status }}</div>
+        <div>{{ ticket.quantidade }}</div>
         <div>
-          <button class="imprimir-btn">
-            <a
-              href="https://drive.google.com/file/d/1nyvhp6yyVj1ayJX47PqMBaLa9XM468IC/view?usp=sharing"
-              target="_blank"
-            >
-              Imprimir
-            </a>
-          </button>
           <button class="edit-btn" @click="editTicket(ticket)">Editar</button>
           <button class="delete-btn" @click="deleteTicket(ticket.id)">Cancelar</button>
         </div>
@@ -111,6 +105,7 @@ export default {
       this.editedTicket.setor = ticket.setor;
       this.editedTicket.categoria = ticket.categoria;
       this.editedTicket.status = ticket.status;
+      
     },
     async saveEdit() {
       const { id, cidade, setor, categoria, status } = this.editedTicket;
@@ -155,7 +150,7 @@ export default {
 
 <style scoped>
 #tabela {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -172,7 +167,7 @@ export default {
 }
 #tabela-head div,
 .tabela-row div {
-  width: 19%;
+  width: 14%;
 }
 .tabela-row {
   width: 100%;
@@ -181,7 +176,7 @@ export default {
 }
 #tabela-head .order-id,
 .tabela-row .order-number {
-  width: 5%;
+  width: 7%;
 }
 .imprimir-btn {
   background-color: #222;
