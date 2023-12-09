@@ -21,18 +21,5 @@
     "categoria": "Premium meia",
     "quantidadeDisponivel": 10
   },
-  "ticket": [
-    {
-      "status": "aceito",
-      "id": 1
-    },
-    {
-      "status": "aceito",
-      "id": 2
-    },
-    {
-      "status": "aceito",
-      "id": 3
-    }
-  ]
+  "ticket": []
 }

@@ -63,7 +63,7 @@ export default {
   },
   methods: {
     async getIngresso() {
-      const req = await fetch('http://localhost:3000/ingresso');
+      const req = await fetch('http://localhost:1337/ingressos');
       const data = await req.json();
 
       this.cidades = data.cidades;
@@ -89,7 +89,7 @@ export default {
 
       const dataJson = JSON.stringify(data);
 
-      const req = await fetch("http://localhost:3000/ticket", {
+      const req = await fetch('http://localhost:1337/ingressos', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: dataJson,

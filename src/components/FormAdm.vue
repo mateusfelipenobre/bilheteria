@@ -46,7 +46,7 @@ export default {
 
       const dataJson = JSON.stringify(novoIngresso);
 
-      const req = await fetch("http://localhost:3000/ingresso", {
+      const req = await fetch("http://localhost:1337/ingressos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: dataJson,

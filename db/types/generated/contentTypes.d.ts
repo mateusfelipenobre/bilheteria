@@ -362,6 +362,96 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiAdminAdmin extends Schema.CollectionType {
+  collectionName: 'admins';
+  info: {
+    singularName: 'admin';
+    pluralName: 'admins';
+    displayName: 'Admin';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    username: Attribute.String;
+    password: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::admin.admin',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::admin.admin',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiIngressoIngresso extends Schema.CollectionType {
+  collectionName: 'ingressos';
+  info: {
+    singularName: 'ingresso';
+    pluralName: 'ingressos';
+    displayName: 'ingressos';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Cidade: Attribute.String;
+    Setor: Attribute.String;
+    Categoria: Attribute.String;
+    quantidadeDisponivel: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ingresso.ingresso',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ingresso.ingresso',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiShowShow extends Schema.CollectionType {
+  collectionName: 'shows';
+  info: {
+    singularName: 'show';
+    pluralName: 'shows';
+    displayName: 'Shows';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Cidade: Attribute.String;
+    Setor: Attribute.String;
+    Categoria: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::show.show', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::show.show', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -587,7 +677,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -616,6 +705,8 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    user1: Attribute.String;
+    senhauser1: Attribute.Password;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -677,62 +768,6 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiIngressoIngresso extends Schema.CollectionType {
-  collectionName: 'ingressos';
-  info: {
-    singularName: 'ingresso';
-    pluralName: 'ingressos';
-    displayName: 'Ingressos';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Cidade: Attribute.String;
-    Setor: Attribute.String;
-    Categoria: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::ingresso.ingresso',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::ingresso.ingresso',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiShowShow extends Schema.CollectionType {
-  collectionName: 'shows';
-  info: {
-    singularName: 'show';
-    pluralName: 'shows';
-    displayName: 'Shows';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Cidade: Attribute.String;
-    Setor: Attribute.String;
-    Categoria: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::show.show', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::show.show', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -743,14 +778,15 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::admin.admin': ApiAdminAdmin;
+      'api::ingresso.ingresso': ApiIngressoIngresso;
+      'api::show.show': ApiShowShow;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::ingresso.ingresso': ApiIngressoIngresso;
-      'api::show.show': ApiShowShow;
     }
   }
 }

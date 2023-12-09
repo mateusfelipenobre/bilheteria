@@ -19,7 +19,7 @@
         </form>
         <p v-if="error" style="color: red;">{{ error }}</p>
         
-         <router-link to="TelaAdm">ADM</router-link> <br>
+          <router-link to="TelaAdm">ADM</router-link> <br>
           <router-link to="TelaUsuario">Usuário</router-link>
         
     </div>
@@ -29,7 +29,7 @@
 
 <script>
 import axios from 'axios';
-import TelaUsuario from '../views/TelaUsuario.vue'
+
 
 export default {
     name: "LoginForm",
@@ -42,34 +42,25 @@ export default {
     };
   },
   methods: {
-    async login() {
-      try {
-        const response = await axios.get('http://localhost:3000/users', {
-          params: {
-            username: this.username,
-            password: this.password
-          }
-        });
+   async login() {
+  try {
+    const response = await axios.post('http://localhost:1337/auth/local', {
+      identifier: this.username,
+      password: this.password
+    });
 
-        if (response.data.length > 0) {
-          const user = response.data[0];
+    const user = response.data.user;
 
-          if (user.role === 'user') {
-            // Redirecione o usuário para a página do usuário
-            this.$router.push('TelaUsuario');
-          } else if (user.role === 'admin') {
-            // Redirecione o administrador para a página de administração
-            this.$router.push('TelaAdm');
-          }
-        } else {
-          // Autenticação falhou
-          this.error = 'Credenciais inválidas';
-        }
-      } catch (error) {
-        console.error('Erro na autenticação:', error);
-        this.error = 'Erro na autenticação';
-      }
+    if (user.role === 'user') {
+      this.$router.push('TelaUsuario');
+    } else if (user.role === 'admin') {
+      this.$router.push('TelaAdm');
     }
+  } catch (error) {
+    console.error('Erro na autenticação:', error);
+    this.error = 'Credenciais inválidas';
+  }
+}
   }
     
 

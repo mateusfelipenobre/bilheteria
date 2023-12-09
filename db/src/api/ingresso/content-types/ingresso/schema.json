@@ -4,7 +4,8 @@
   "info": {
     "singularName": "ingresso",
     "pluralName": "ingressos",
-    "displayName": "Ingressos"
+    "displayName": "ingressos",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,6 +20,9 @@
     },
     "Categoria": {
       "type": "string"
+    },
+    "quantidadeDisponivel": {
+      "type": "integer"
     }
   }
 }
