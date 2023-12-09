@@ -1,25 +1,18 @@
 {
-  "users": [
+  "ingressos": [
     {
-      "id": 1,
-      "username": "usuario1",
-      "password": "senha1",
-      "role": "user",
-      "status": "solicitado"
+      "id": 2,
+      "cidade": "Rio de Janeiro",
+      "setor": "Arquibancada",
+      "categoria": "Regular",
+      "quantidadeDisponivel": 200
     },
     {
-      "id": 3,
-      "username": "admin",
-      "password": "adminsenha",
-      "role": "admin",
-      "status": "aceito"
+      "cidade": "Porto",
+      "setor": "Premium",
+      "categoria": "Meia",
+      "quantidadeDisponivel": 50,
+      "id": 3
     }
-  ],
-  "ingresso": {
-    "cidade": "Quixada",
-    "setor": "Visão parcial",
-    "categoria": "Premium meia",
-    "quantidadeDisponivel": 10
-  },
-  "ticket": []
+  ]
 }

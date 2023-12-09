@@ -2,7 +2,9 @@
   
   <div class="main-container">
     <FormAdm/>
+    <DashboardIngresso/>
     <DashboardAdm/>
+    
    
   </div>
  
@@ -11,6 +13,7 @@
 <script>
 import FormAdm from "../components/FormAdm.vue"
 import DashboardAdm from "../components/DashboardAdm.vue"
+import DashboardIngresso from "../components/DashboardIngresso.vue"
 
 
 export default {
@@ -18,7 +21,8 @@ export default {
 
   components: {
    FormAdm,
-   DashboardAdm
+   DashboardAdm, 
+   DashboardIngresso
   
   }
 }

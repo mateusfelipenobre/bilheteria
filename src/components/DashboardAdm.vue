@@ -41,14 +41,14 @@ export default {
   },
   methods: {
     async getIngressosSolicitados() {
-      const req = await fetch("http://localhost:3000/ticket?solicitado=true");
+      const req = await fetch("http://localhost:1337/ticket?solicitado=true");
       const data = await req.json();
       this.tickets = data;
     },
     async aceitarIngresso(ticket) {
       if (ticket.status === 'solicitado') {
         // Atualize o status no backend para 'aceito'
-        const req = await fetch(`http://localhost:3000/ticket/${ticket.id}`, {
+        const req = await fetch(`http://localhost:1337/ticket/${ticket.id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ status: 'aceito' }),
@@ -63,7 +63,7 @@ export default {
     async negarIngresso(ticket) {
       if (ticket.status === 'solicitado') {
         // Atualize o status no backend para 'negado'
-        const req = await fetch(`http://localhost:3000/ticket/${ticket.id}`, {
+        const req = await fetch(`http://localhost:1337/ticket/${ticket.id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ status: 'negado' }),
