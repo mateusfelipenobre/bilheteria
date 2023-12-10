@@ -20,7 +20,7 @@
       </div>
       <div class="input-container">
         <input class="submit-btn" type="submit" value="Cadastrar Ingresso" />
-      </div>
+      </div>npm run serve
     </form>
   </div>
 </template>

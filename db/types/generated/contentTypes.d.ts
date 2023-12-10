@@ -452,6 +452,40 @@ export interface ApiShowShow extends Schema.CollectionType {
   };
 }
 
+export interface ApiTicketTicket extends Schema.CollectionType {
+  collectionName: 'tickets';
+  info: {
+    singularName: 'ticket';
+    pluralName: 'tickets';
+    displayName: 'ticket';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cidade: Attribute.String;
+    setor: Attribute.String;
+    categoria: Attribute.String;
+    status: Attribute.Boolean;
+    quantidade: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ticket.ticket',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ticket.ticket',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -781,6 +815,7 @@ declare module '@strapi/types' {
       'api::admin.admin': ApiAdminAdmin;
       'api::ingresso.ingresso': ApiIngressoIngresso;
       'api::show.show': ApiShowShow;
+      'api::ticket.ticket': ApiTicketTicket;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
