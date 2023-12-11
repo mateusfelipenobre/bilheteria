@@ -30,6 +30,7 @@ Todos os acessantes do site podem visualizar a página de home, além das datas,
 VUE, Node.js, HTML, CSS
 
 **Backend:**
+
 Firebase
 
 
