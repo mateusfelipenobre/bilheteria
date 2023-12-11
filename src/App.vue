@@ -13,6 +13,10 @@ export default {
     Navbar,
     Footer
   },
+
+  mounted () {
+    console.log(this.$Firebase)
+  },
   data(){
     return {
       logo_src: "/img/logo.png",

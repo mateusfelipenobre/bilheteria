@@ -1,5 +1,4 @@
 <template>
-  <h2> Adicionar Ingressos para compra</h2>
   <div>
     <form id="form-adm" @submit.prevent="cadastrarIngresso">
       <div class="input-container">
@@ -20,19 +19,22 @@
       </div>
       <div class="input-container">
         <input class="submit-btn" type="submit" value="Cadastrar Ingresso" />
-      </div>npm run serve
+      </div>
     </form>
   </div>
 </template>
 
 <script>
+import { ref } from 'vue';
+import { getFirestore, addDoc, collection } from 'firebase/firestore';
+
 export default {
   data() {
     return {
-      novaCidade: "",
-      novoSetor: "",
-      novaCategoria: "",
-      novaQuantidade: 1, // valor padrão
+      novaCidade: '',
+      novoSetor: '',
+      novaCategoria: '',
+      novaQuantidade: 1,
     };
   },
   methods: {
@@ -44,31 +46,30 @@ export default {
         quantidadeDisponivel: this.novaQuantidade,
       };
 
-      const dataJson = JSON.stringify(novoIngresso);
+      const db = getFirestore();
 
-      const req = await fetch("http://localhost:1337/ingressos", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: dataJson,
-      });
+      try {
+        const docRef = await addDoc(collection(db, 'ingressos'), novoIngresso);
+        console.log('Ingresso cadastrado com ID:', docRef.id);
 
-      const res = await req.json();
+        // depois do login, atualize os dados no componente DadosForm
+        this.$root.$emit('atualizarIngressos');
+      } catch (error) {
+        console.error('Erro ao cadastrar o ingresso:', error);
+      }
 
-      // Lógica adicional, se necessário
-      console.log("Ingresso cadastrado com sucesso!");
-
-      // Limpar os campos após o cadastro
-      this.novaCidade = "";
-      this.novoSetor = "";
-      this.novaCategoria = "";
-      this.novaQuantidade = 1; // redefinindo para o valor padrão
+      // limpa os campos após o cadastro
+      this.novaCidade = '';
+      this.novoSetor = '';
+      this.novaCategoria = '';
+      this.novaQuantidade = 1;
     },
-  },
+  }
 };
 </script>
 
 <style scoped>
-input{
+input {
   width: 400px;
 }
 </style>

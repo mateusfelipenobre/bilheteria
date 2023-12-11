@@ -1,18 +1,55 @@
 {
-  "ingressos": [
-    {
-      "id": 2,
-      "cidade": "Rio de Janeiro",
-      "setor": "Arquibancada",
-      "categoria": "Regular",
-      "quantidadeDisponivel": 200
-    },
-    {
-      "cidade": "Porto",
-      "setor": "Premium",
-      "categoria": "Meia",
-      "quantidadeDisponivel": 50,
-      "id": 3
-    }
-  ]
+  "ingresso": {
+    "cidades": [
+      {
+        "id": 1,
+        "tipo": "São Paulo"
+      },
+      {
+        "id": 2,
+        "tipo": "México"
+      },
+      {
+        "id": 3,
+        "tipo": "Santiago"
+      },
+      {
+        "id": 4,
+        "tipo": "Bogóta"
+      }
+    ],
+    "setores": [
+      {
+        "id": 1,
+        "tipo": "Front"
+      },
+      {
+        "id": 2,
+        "tipo": "Pista"
+      },
+      {
+        "id": 3,
+        "tipo": "Camarote"
+      },
+      {
+        "id": 4,
+        "tipo": "Visão Parcial"
+      }
+    ],
+    "categorias": [
+      {
+        "id": 1,
+        "tipo": "Inteira"
+      },
+      {
+        "id": 2,
+        "tipo": "Meia"
+      },
+      {
+        "id": 3,
+        "tipo": "Social"
+      }
+    ]
+  },
+  "ticket": []
 }

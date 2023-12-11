@@ -1,5 +1,4 @@
 <template>
-
   <div>
     <Mensagem :msg="msg" v-show="msg" />
     <form id="dados-form" @submit="createTicket">
@@ -39,9 +38,9 @@
         <input id="comprar" class="submit-btn" type="submit" value="Comprar ingresso">
       </div>
     </form>
-  </div>
 
-  <h3>Seu carrinho de compras</h3>
+    <h3>Seu carrinho de compras</h3>
+  </div>
 </template>
 
 <script>
@@ -51,9 +50,9 @@ export default {
   name: "DadosForm",
   data() {
     return {
-      cidades: null,
-      setores: null,
-      categorias: null,
+      cidades: [],
+      setores: [],
+      categorias: [],
       cidade: null,
       setor: null,
       categoria: null,
@@ -63,13 +62,17 @@ export default {
   },
   methods: {
     async getIngresso() {
-      const req = await fetch('http://localhost:1337/ingressos');
-      const data = await req.json();
+  try {
+    const req = await fetch('http://localhost:3000/ingresso');
+    const data = await req.json();
 
-      this.cidades = data.cidades;
-      this.setores = data.setores;
-      this.categorias = data.categorias;
-    },
+    this.cidades = data.cidades;
+    this.setores = data.setores;
+    this.categorias = data.categorias;
+  } catch (error) {
+    console.error('Erro ao obter dados de ingresso:', error);
+  }
+},
 
     async createTicket(e) {
       e.preventDefault();
@@ -89,7 +92,7 @@ export default {
 
       const dataJson = JSON.stringify(data);
 
-      const req = await fetch('http://localhost:1337/ingressos', {
+      const req = await fetch('http://localhost:3000/ticket', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: dataJson,
@@ -102,7 +105,7 @@ export default {
       this.cidade = "";
       this.setor = "";
       this.categoria = "";
-      this.quantidade = 1; // redefinindo para o valor padrão
+      this.quantidade = 1; 
     }
   },
   mounted() {
@@ -115,10 +118,11 @@ export default {
 </script>
 
 <style>
-#quantidade{
+#quantidade {
   width: 400px;
 }
-label{
+
+label {
   min-width: 600px;
 }
 </style>

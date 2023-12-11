@@ -2,7 +2,7 @@
   <div>
     <h2>Lista de Ingressos Disponibilizados</h2>
 
-    <!-- Tabela para visualizar ingressos cadastrados -->
+  
     <div id="tabela-ingressos">
       <div id="tabela-head">
         <div>Cidade</div>
@@ -27,35 +27,44 @@
 </template>
 
 <script>
+import { onSnapshot, collection, deleteDoc, doc } from 'firebase/firestore';
+import { ref, onMounted } from 'vue';
+import { getFirestore } from 'firebase/firestore';
+
+const db = getFirestore();
+
 export default {
   name: "DashboardIngresso",
-  data() {
-    return {
-      ingressos: [], // Array para armazenar os ingressos cadastrados
+  setup() {
+    const ingressos = ref([]);
+
+    const excluirIngresso = async (id) => {
+      try {
+        await deleteDoc(doc(db, 'ingressos', id));
+        console.log('Ingresso excluído com sucesso!');
+        // Recarregar a lista de ingressos após a exclusão
+        carregarIngressos();
+      } catch (error) {
+        console.error('Erro ao excluir o ingresso:', error);
+      }
     };
-  },
-  methods: {
-    async excluirIngresso(id) {
-      const req = await fetch(`http://localhost:1337/ingressos/${id}`, {
-        method: "DELETE",
+
+    const carregarIngressos = async () => {
+      const q = collection(db, 'ingressos');
+      onSnapshot(q, (snapshot) => {
+        ingressos.value = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
       });
+    };
 
-      const res = await req.json();
+    onMounted(() => {
+      carregarIngressos();
+    });
 
-      // Após excluir, recarregar a lista de ingressos
-      this.carregarIngressos();
-    },
-
-    async carregarIngressos() {
-      const req = await fetch("http://localhost:1337/ingressos");
-      const data = await req.json();
-
-      this.ingressos = data;
-    },
-  },
-  mounted() {
-    // Carregar a lista de ingressos ao inicializar o componente
-    this.carregarIngressos();
+    return {
+      ingressos,
+      excluirIngresso,
+      carregarIngressos,
+    };
   },
 };
 </script>

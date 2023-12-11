@@ -2,7 +2,7 @@
   <div id="dashboard-adm">
     <h2>Ingressos Solicitados</h2>
 
-    <!-- Lista de ingressos solicitados -->
+   
     <div id="tabela-head" class="ticket-row">
       <div class="order-id"># ID do Cliente</div>
       <div>Cidade</div>
@@ -23,11 +23,6 @@
         <button @click="negarIngresso(ticket)" :disabled="ticket.status !== 'solicitado'" class="acao-btn negar-btn">Negar</button>
       </div>
     </div>
-
-    <!-- Botão para Aceitar Alterações -->
-    <div class="input-container">
-      <button @click="aceitarAlteracoes" class="acao-btn aceitar-alteracoes-btn">Aceitar Alterações</button>
-    </div>
   </div>
 </template>
 
@@ -41,14 +36,14 @@ export default {
   },
   methods: {
     async getIngressosSolicitados() {
-      const req = await fetch("http://localhost:1337/ticket?solicitado=true");
+      const req = await fetch("http://localhost:3000/ticket?solicitado=true");
       const data = await req.json();
       this.tickets = data;
     },
     async aceitarIngresso(ticket) {
       if (ticket.status === 'solicitado') {
-        // Atualize o status no backend para 'aceito'
-        const req = await fetch(`http://localhost:1337/ticket/${ticket.id}`, {
+        // atualiza para 'aceito'
+        const req = await fetch(`http://localhost:3000/ticket/${ticket.id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ status: 'aceito' }),
@@ -56,14 +51,14 @@ export default {
 
         const res = await req.json();
 
-        // Atualize a lista de ingressos no Dashboard do Administrador
+        // atualiza a lista de ingressos no Dashboard do Admin
         this.getIngressosSolicitados();
       }
     },
     async negarIngresso(ticket) {
       if (ticket.status === 'solicitado') {
-        // Atualize o status no backend para 'negado'
-        const req = await fetch(`http://localhost:1337/ticket/${ticket.id}`, {
+        // Atualiza p negado
+        const req = await fetch(`http://localhost:3000/ticket/${ticket.id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ status: 'negado' }),
@@ -71,14 +66,12 @@ export default {
 
         const res = await req.json();
 
-        // Remova o ingresso da lista no Dashboard do Administrador
+        // remove o ingresso do Dashboard do adm
         this.tickets = this.tickets.filter((t) => t.id !== ticket.id);
       }
     },
     async aceitarAlteracoes() {
-      // Lógica para aceitar alterações (por exemplo, enviar uma requisição para o backend)
-      // Limpar a tabela e atualizar o status dos clientes
-      // Atualize a lista de ingressos
+    
       this.getIngressosSolicitados();
     },
   },
@@ -116,17 +109,17 @@ export default {
 }
 
 .input-container {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .acao-btn {
-  margin-left: 35%;
+  margin: 5px;
   text-align: center;
   border: 2px solid transparent;
-  padding: 10px 15px;
+  padding: 5px;
   cursor: pointer;
   transition: border-color 0.3s, color 0.3s, background-color 0.3s;
-  width: 30%;
+  width: 40%;
 }
 
 .acao-btn:hover {
@@ -139,30 +132,30 @@ export default {
 }
 
 .aceitar-btn {
-  background-color: #4caf50;
+  background-color: green;
   color: white;
 }
 
 .aceitar-btn:active {
   background-color: transparent;
-  border-color: #4caf50;
-  color: #4caf50;
+  border-color: green;
+  color: green;
 }
 
 .negar-btn {
-  background-color: #ff5555;
+  background-color: #831010;
   color: white;
 }
 
 .negar-btn:active {
   background-color: transparent;
-  border-color: #ff5555;
-  color: #ff5555;
+  border-color: #831010;
+  color: #831010;
 }
 
 .aceitar-alteracoes-btn {
-  background-color: #4caf50;
-  border-color: #4caf50;
+  background-color: green;
+  border-color: green;
   color: white;
 }
 

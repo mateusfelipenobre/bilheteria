@@ -1,7 +1,7 @@
 <template>
   <div>
     <form id="dados-form" @submit.prevent="authenticate">
-      <h2>Realize o login para fazer sua compra</h2>
+      <h2>É administrador? Faça aqui seu Login</h2>
       <div class="input-container">
         <label for="username">Nome de usuário</label>
         <input required type="email" id="email" name="email" v-model="email" placeholder="Digite o seu usuário">
@@ -15,7 +15,7 @@
       </div>
     </form>
     <p v-if="error" style="color: red;">{{ error }}</p>
-   
+  
   </div>
 </template>
 
@@ -36,8 +36,8 @@ export default {
 
       try {
         await signInWithEmailAndPassword(auth, email.value, password.value);
-        // Se não houver erro, redirecione para a tela do usuário
-        router.push('/TelaUsuario');
+        // Se não houver erro, redireciona para a tela do adm
+        router.push('/TelaAdm');
       } catch (error) {
         console.error("Erro ao autenticar usuário:", error.code, error.message);
         // Atualize a variável de erro para exibir a mensagem
@@ -61,4 +61,3 @@ export default {
   margin: 0 auto;
 }
 </style>
-

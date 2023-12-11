@@ -82,13 +82,13 @@ export default {
   },
   methods: {
     async getIngressos() {
-      const req = await fetch("http://localhost:1337/ticket");
+      const req = await fetch("http://localhost:3000/ticket");
       const data = await req.json();
 
       this.ticket = data;
     },
     async deleteTicket(id) {
-      const req = await fetch(`http://localhost:1337/ticket/${id}`, {
+      const req = await fetch(`http://localhost:3000/ticket/${id}`, {
         method: "DELETE",
       });
 
@@ -110,7 +110,7 @@ export default {
     async saveEdit() {
       const { id, cidade, setor, categoria, status } = this.editedTicket;
 
-      const req = await fetch(`http://localhost:1337/ticket/${id}`, {
+      const req = await fetch(`http://localhost:3000/ticket/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ cidade, setor, categoria, status }),
@@ -133,7 +133,7 @@ export default {
       this.getIngressos();
     },
     async getIngresso() {
-      const req = await fetch("http://localhost:1337/ingresso");
+      const req = await fetch("http://localhost:3000/ingresso");
       const data = await req.json();
 
       this.cidades = data.cidades;
